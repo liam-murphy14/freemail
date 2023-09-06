@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
+  },
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.68",
+    "prettier": "^3.0.3"
+  }
+}
