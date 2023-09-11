@@ -1,6 +1,51 @@
 {
   "timeZone": "America/Vancouver",
-  "dependencies": {},
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "FirestoreApp",
+        "version": "33",
+        "libraryId": "1VUSl4b1r1eoNcRWotZM3e87ygkxvXltOgyDZhixqncz9lQ3MjfT1iKFw"
+      }
+    ],
+    "enabledAdvancedServices": [
+      {
+        "userSymbol": "Gmail",
+        "version": "v1",
+        "serviceId": "gmail"
+      }
+    ]
+  },
+  "addOns": {
+    "common": {
+      "homepageTrigger": {
+        "runFunction": "onDefaultHomePageOpen",
+        "enabled": true
+      },
+      "layoutProperties": {
+        "primaryColor": "#ff392b",
+        "secondaryColor": "#d68617"
+      },
+      "logoUrl": "https://firebasestorage.googleapis.com/v0/b/freemail-9a7b4.appspot.com/o/freemail-logo.png?alt=media&token=c37d8778-18b7-43ea-b18f-6b0b25819331",
+      "name": "Freemail - FOSS Email Open Tracking",
+      "useLocaleFromApp": true
+    },
+
+    "gmail": {
+      "composeTrigger": {
+        "selectActions": [
+          {
+            "text": "Send a tracked email",
+            "runFunction": "getTrackedSendButton"
+          }
+        ],
+        "draftAccess": "NONE"
+      }
+    }
+  },
+
+  "oauthScopes": ["https://www.googleapis.com/auth/gmail.addons.execute"],
+  "urlFetchWhitelist": ["https://www.example.com/myendpoint/TODO: CHANGE"],
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8"
 }
