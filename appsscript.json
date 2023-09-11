@@ -44,7 +44,11 @@
     }
   },
 
-  "oauthScopes": ["https://www.googleapis.com/auth/gmail.addons.execute"],
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/script.locale",
+    "https://www.googleapis.com/auth/gmail.addons.current.action.compose"
+  ],
   "urlFetchWhitelist": ["https://www.example.com/myendpoint/TODO: CHANGE"],
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8"

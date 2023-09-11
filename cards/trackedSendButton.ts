@@ -10,6 +10,7 @@ function buildTrackedSendComposeCard() {
   return card.addSection(cardSection).build();
 }
 
+// TODO: typescriptify
 function applyInsertImageAction(e) {
   var imageUrl = e.parameters.url;
   var imageHtmlContent = '<img style="display: block" src="' + imageUrl + '"/>';
