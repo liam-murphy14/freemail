@@ -6,10 +6,14 @@ function buildTrackedSendComposeCard() {
   const card = CardService.newCardBuilder();
   const cardSection = CardService.newCardSection().setHeader(
     "Send a tracked email",
-  );
-  return card.addSection(cardSection).build();
+  ).addWidget(CardService.newTextButton().setText("Track Email").setOnClickAction(CardService.newAction().setFunctionName("onSendButtonClick")).setTextButtonStyle(CardService.TextButtonStyle.FILLED));
+  return card.addSection(cardSection).build()
 }
 
+function onSendButtonClick() {
+  const insertTrackerAction = CardService.newUpdateDraftBodyAction().addUpdateContent('<img height="1" width="1" src="TODO: change" />', CardService.ContentType.MUTABLE_HTML).setUpdateType(CardService.UpdateDraftBodyType.IN_PLACE_INSERT)
+  return CardService.newUpdateDraftActionResponseBuilder().setUpdateDraftBodyAction(insertTrackerAction).build()
+}
 // TODO: typescriptify
 function applyInsertImageAction(e) {
   var imageUrl = e.parameters.url;
